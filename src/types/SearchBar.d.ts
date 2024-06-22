@@ -1,10 +1,11 @@
 interface Course {
+    srcdb: string
+    database_name: string
     code: string
     title: string
 }
 
 interface Courses {
-    srcdb: string
-    count: int
+    count: number
     results: Course[]
 }

@@ -3,7 +3,7 @@ import Results from "./ui/Results"
 import filterJson from "./utils/Filter"
 import { useState, useCallback, useEffect } from 'react'
 
-import data from '../../data/mock/sample_catalog.json'
+import data from '../../data/mock/2021Fall-2024Fall.json'
 
 const courses: Courses = data
 
