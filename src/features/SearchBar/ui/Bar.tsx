@@ -30,12 +30,14 @@ const Bar = ({ onSearch }: SearchBarProps) => {
       <Controller
         name="searchQuery"
         control={control}
+        
         defaultValue=""
         render={({ field }) => (
           <input
             type="text"
             className="w-full px-4 py-2 border border-gray-300 rounded-xl"
             placeholder="Search for a course..."
+            autoComplete="off"
             {...field}
           />
         )}
