@@ -1,0 +1,14 @@
+{
+    "department": "CSCI",
+    "courseNumber": "1300",
+    "title": "CS 1: Starting Computing",
+    "description": "Teaches techniques for writing computer programs in higher level programming languages to solve problems of interest in a range of application domains. Appropriate for students with little to no experience in computing or programming. Degree credit not granted for this course and CSCI 1310 or CSCI 1320 or ECEN 1310. Same as CSPB 1300.",
+    "preReqString": " AND ( MATH1300 OR  MATH1310 OR  APPM1345 OR  APPM1350 OR  APPM1235 OR  GEEN1235 OR  APPM1340 OR  MATH1150",
+    "coReqString": " OR  MATH1300 OR  MATH1310 OR  APPM1345 OR  APPM1350 OR  APPM1235 OR  GEEN1235 OR  APPM1340 OR  MATH1150) ",
+    "hours": 4,
+    "minimumHours": 4,
+    "maximumHours": 4,
+    "custom_Requirement Groups": "<B>Requires a prerequisite or corequisite course of APPM 1235 or APPM 1340 or APPM 1345 or APPM 1350 or MATH 1150 or MATH 1300 or MATH 1310 (all minimum grade C-).</B>",
+    "custom_Course Attributes": "<B>Boulder CMCI GenEd Requiremnts</B>: <B>Computing</B>",
+    "canCreate": false
+}
