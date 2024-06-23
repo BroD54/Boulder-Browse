@@ -4,6 +4,10 @@ import 'reactflow/dist/style.css';
 
 import CourseNode from '../../components/nodes/CourseNode';
 
+import data from '../../data/mock/2021Fall-2024Fall.json'
+const courses: Courses = data
+const course: Course = courses.results[1400]
+
 const connectionLineStyle = { stroke: '#2D2D2D' };
 const snapGrid = [20, 20] as [number, number];
 const nodeTypes = {
@@ -38,7 +42,10 @@ const Flow = () => {
       {
         id: '2',
         type: 'courseNode',
-        data: { onChange: onChange },
+        data: { 
+          onChange: onChange, 
+          course: course
+        },
         position: { x: 0, y: 0 },
       },
       {
