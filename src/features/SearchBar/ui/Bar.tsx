@@ -28,7 +28,7 @@ const Bar = ({ onSearch, setShowResults }: SearchBarProps) => {
     <div
       className="absolute top-16 left-1/2 transform -translate-x-1/2 w-2/5 max-w-xl flex space-x-2 rounded-xl shadow-lg shadow-gray-500"
       onClick={handleClick}
-      onBlur={() => setTimeout(() => setShowResults(false), 100)}
+      onBlur={() => setTimeout(() => setShowResults(false), 200)}
     >
       <Controller
         name="searchQuery"
