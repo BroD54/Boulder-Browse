@@ -1,33 +1,31 @@
 import { memo } from 'react';
 import { Handle, Position } from 'reactflow';
 
-export default memo(({  }) => {
+interface CourseNodeProps {
+  
+}
+
+const CourseNode = memo(({ }: CourseNodeProps) => {
   return (
-    <>
+    <div className="bg-white p-2 border border-black rounded w-40">
       <Handle
         type="target"
-        position={Position.Left}
-        style={{ background: '#555' }}
-        onConnect={(params) => console.log('handle onConnect', params)}
+        position={Position.Top}
+        className="w-2 h-2"
         isConnectable={true}
       />
-      <div className='bg-white'>
+      <div className="text-center">
         Course Node
       </div>
       <Handle
         type="source"
-        position={Position.Right}
+        position={Position.Bottom}
         id="a"
-        style={{ top: 10, background: '#555' }}
+        className="w-2 h-2"
         isConnectable={true}
       />
-      <Handle
-        type="source"
-        position={Position.Right}
-        id="b"
-        style={{ bottom: 10, top: 'auto', background: '#555' }}
-        isConnectable={true}
-      />
-    </>
+    </div>
   );
 });
+
+export default CourseNode;

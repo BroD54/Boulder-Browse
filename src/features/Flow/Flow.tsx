@@ -4,7 +4,7 @@ import 'reactflow/dist/style.css';
 
 import CourseNode from '../../components/nodes/CourseNode';
 
-const connectionLineStyle = { stroke: '#4D63DF' };
+const connectionLineStyle = { stroke: '#2D2D2D' };
 const snapGrid = [20, 20] as [number, number];
 const nodeTypes = {
   courseNode: CourseNode,
@@ -36,48 +36,34 @@ const Flow = () => {
 
     setNodes([
       {
-        id: '1',
-        type: 'input',
-        data: { label: 'An input node' },
-        position: { x: 0, y: 50 },
-        sourcePosition: Position.Right,
-      },
-      {
         id: '2',
         type: 'courseNode',
         data: { onChange: onChange },
-        style: { border: '1px solid #777', padding: 10 },
-        position: { x: 300, y: 50 },
+        position: { x: 0, y: 0 },
       },
       {
         id: '3',
         type: 'output',
         data: { label: 'Output A' },
-        position: { x: 650, y: 25 },
-        targetPosition: Position.Left,
+        position: { x: -200 , y: 200 },
+        targetPosition: Position.Top,
       },
       {
         id: '4',
         type: 'output',
         data: { label: 'Output B' },
-        position: { x: 650, y: 100 },
-        targetPosition: Position.Left,
+        position: { x: 200, y: 200 },
+        targetPosition: Position.Top,
       },
     ]);
 
     setEdges([
       {
-        id: 'e1-2',
-        source: '1',
-        target: '2',
-        style: { stroke: '#4D63DF' },
-        deletable: false
-      },
-      {
         id: 'e2a-3',
         source: '2',
         target: '3',
         sourceHandle: 'a',
+        style: connectionLineStyle,
         deletable: false
       },
       {
@@ -85,6 +71,7 @@ const Flow = () => {
         source: '2',
         target: '4',
         sourceHandle: 'b',
+        style: connectionLineStyle,
         deletable: false
       },
     ]);
@@ -92,7 +79,7 @@ const Flow = () => {
 
   const onConnect = useCallback(
     (params: any) =>
-      setEdges((eds) => addEdge({ ...params, style: { stroke: '#4D63DF' } }, eds)),
+      setEdges((eds) => addEdge({ ...params, style: connectionLineStyle }, eds)),
     []
   );
   return (
