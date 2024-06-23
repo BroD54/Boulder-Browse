@@ -1,16 +1,17 @@
+import { useSelectedCourse } from '../../../context/SelectedCourseContext'
+
 interface ResultProps {
     course: Course
 }
 
+
 const Result = ({ course }: ResultProps) => {
-    const handleClick = () => {
-        console.log(`'${course.title}' has been selected`)
-    }
+    const { setSelectedCourse } = useSelectedCourse();
 
     return (
         <div 
             className="flex flex-col p-4 border-b hover:bg-gray-100 cursor-pointer"
-            onClick={handleClick}
+            onClick={() => setSelectedCourse(course)}
         >
             <div className="flex justify-between">
                 <div className="font-bold">{course.code}</div>

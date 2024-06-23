@@ -1,7 +1,8 @@
 import { useEffect, useCallback } from 'react';
+import useDelayedEffect from '../../hooks/useDelayedEffect';
 import ReactFlow, { useNodesState, useEdgesState, addEdge, Controls, Position, Background } from 'reactflow';
 import 'reactflow/dist/style.css';
-
+import { useSelectedCourse } from '../../context/SelectedCourseContext';
 import CourseNode from '../../components/nodes/CourseNode';
 
 import data from '../../data/mock/2021Fall-2024Fall.json'
@@ -17,6 +18,14 @@ const nodeTypes = {
 const defaultViewport = { x: 0, y: 0, zoom: 1.5 };
 
 const Flow = () => {
+  const { selectedCourse } = useSelectedCourse();
+
+    useDelayedEffect(() => {
+        if (selectedCourse != undefined) {
+          console.log(selectedCourse?.title)
+        }
+    }, [selectedCourse])
+
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 

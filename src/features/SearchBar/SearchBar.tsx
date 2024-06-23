@@ -1,9 +1,9 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import filterJson from './utils/Filter';
 import Bar from './ui/Bar';
 import Results from './ui/Results';
-import data from '../../data/mock/2021Fall-2024Fall.json';
 
+import data from '../../data/mock/2021Fall-2024Fall.json';
 const courses: Courses = data;
 
 const SearchBar = () => {
