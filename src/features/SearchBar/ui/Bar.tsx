@@ -1,4 +1,4 @@
-import React from 'react';
+import { Dispatch, SetStateAction, useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 
 interface SearchFormData {
@@ -7,25 +7,28 @@ interface SearchFormData {
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
+  setShowResults: Dispatch<SetStateAction<boolean>>
 }
 
-const Bar = ({ onSearch }: SearchBarProps) => {
+const Bar = ({ onSearch, setShowResults }: SearchBarProps) => {
   const { control, watch } = useForm<SearchFormData>();
 
   const searchQuery = watch('searchQuery', '');
 
-  React.useEffect(() => {
+  useEffect(() => {
     onSearch(searchQuery);
   }, [searchQuery, onSearch]);
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
+    setShowResults(true)
   };
 
   return (
     <div
       className="absolute top-16 left-1/2 transform -translate-x-1/2 w-2/5 max-w-xl flex space-x-2 rounded-xl shadow-lg shadow-gray-500"
       onClick={handleClick}
+      onBlur={() => setTimeout(() => setShowResults(false), 100)}
     >
       <Controller
         name="searchQuery"
