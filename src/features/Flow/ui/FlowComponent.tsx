@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useState } from 'react';
 import ReactFlow, { useNodesState, useEdgesState, addEdge, Controls, Position, Background, useReactFlow, OnNodesDelete } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { useSelectedCourse } from '../../../context/SelectedCourseContext';
@@ -18,8 +18,17 @@ const defaultViewport = { x: 0, y: 0, zoom: 1.5 };
 const FlowComponent = () => {
   const { selectedCourse } = useSelectedCourse();
   const { fitView } = useReactFlow();
+  const [deletedCourses, setDeletedCourses] = useState<Set<string>>(new Set());
 
   const AddCourse = (course: Course) => {
+    if (deletedCourses.has(course.code)) {
+      setDeletedCourses((prev) => {
+        const newSet = new Set(prev);
+        newSet.delete(course.code);
+        return newSet;
+      });
+    }
+
     const newNode = {
       id: `${course.code}`,
       type: 'courseNode',
@@ -29,14 +38,14 @@ const FlowComponent = () => {
     setNodes((nds) => [...nds, newNode]);
 
     toast.success(`${course.code} was added`, {
-        position: "bottom-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        progress: undefined,
-        className: 'toast-success',
-      });
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      progress: undefined,
+      className: 'toast-success',
+    });
 
     setTimeout(() => fitView({ padding: 1 }), 100);
   };
@@ -44,12 +53,15 @@ const FlowComponent = () => {
   const DeleteCourse = (course: Course) => {
     if (course) {
       setNodes((nds) => nds.filter((node) => node.id !== course.code));
+      setDeletedCourses((prev) => new Set(prev).add(course.code));
+
       toast.error(`${course.code} was deleted`, {
         position: "bottom-right",
         autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
+        draggable: true,
         progress: undefined,
         className: 'toast-error',
       });
@@ -57,9 +69,13 @@ const FlowComponent = () => {
   };
 
   const onNodesDelete: OnNodesDelete = (nodes) => {
-    nodes.forEach((node) => DeleteCourse(node.data.course));
+    nodes.forEach((node) => {
+      if (node.data && node.data.course) {
+        DeleteCourse(node.data.course);
+      }
+    });
   };
-
+  
   useDelayedEffect(() => {
     if (selectedCourse != undefined) {
       AddCourse(selectedCourse);
