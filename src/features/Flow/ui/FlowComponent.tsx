@@ -18,36 +18,42 @@ const defaultViewport = { x: 0, y: 0, zoom: 1.5 };
 const FlowComponent = () => {
   const { selectedCourse } = useSelectedCourse();
   const { fitView } = useReactFlow();
+  const [addedCourses, setAddedCourses] = useState<string[]>([])
   const [deletedCourses, setDeletedCourses] = useState<Set<string>>(new Set());
 
   const AddCourse = (course: Course) => {
-    if (deletedCourses.has(course.code)) {
-      setDeletedCourses((prev) => {
-        const newSet = new Set(prev);
-        newSet.delete(course.code);
-        return newSet;
-      });
+    if (!addedCourses.includes(course.code)) {
+        if (deletedCourses.has(course.code)) {
+        setDeletedCourses((prev) => {
+            const newSet = new Set(prev);
+            newSet.delete(course.code);
+            return newSet;
+        });
+        }
+
+        const newNode = {
+        id: `${course.code}`,
+        type: 'courseNode',
+        position: { x: 0, y: 0 },
+        data: { course },
+        };
+        setNodes((nds) => [...nds, newNode]);
+        setAddedCourses([...addedCourses, course.code])
+
+        toast.success(`${course.code} was added`, {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+        className: 'toast-success', // >
+        });
+
+        fitView({ padding: 1 });
+    } else {
+        // highlight the course that exists.
     }
-
-    const newNode = {
-      id: `${course.code}`,
-      type: 'courseNode',
-      position: { x: 0, y: 0 },
-      data: { course },
-    };
-    setNodes((nds) => [...nds, newNode]);
-
-    toast.success(`${course.code} was added`, {
-      position: "bottom-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      progress: undefined,
-      className: 'toast-success',
-    });
-
-    setTimeout(() => fitView({ padding: 1 }), 100);
   };
 
   const DeleteCourse = (course: Course) => {
@@ -63,7 +69,7 @@ const FlowComponent = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        className: 'toast-error',
+        className: 'toast-error', // > 
       });
     }
   };

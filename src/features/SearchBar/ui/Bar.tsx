@@ -1,5 +1,7 @@
 import { Dispatch, SetStateAction, useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
+import { useSelectedCourse } from '../../../context/SelectedCourseContext';
+import useDelayedEffect from '../../../hooks/useDelayedEffect';
 
 interface SearchFormData {
     searchQuery: string
@@ -11,7 +13,15 @@ interface SearchBarProps {
 }
 
 const Bar = ({ onSearch, setShowResults }: SearchBarProps) => {
-  const { control, watch } = useForm<SearchFormData>();
+  const { control, watch, setValue } = useForm<SearchFormData>();
+
+  // clear search bar
+  const { selectedCourse } = useSelectedCourse();
+  useDelayedEffect(() => {
+    if (selectedCourse != undefined) {
+      setValue('searchQuery', '');
+    }
+  }, [selectedCourse]);
 
   const searchQuery = watch('searchQuery', '');
 
