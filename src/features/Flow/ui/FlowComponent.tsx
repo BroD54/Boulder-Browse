@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from 'react';
-import ReactFlow, { useNodesState, useEdgesState, addEdge, Controls, Position, Background, useReactFlow } from 'reactflow';
+import ReactFlow, { useNodesState, useEdgesState, addEdge, Controls, Position, Background, useReactFlow, OnNodesDelete } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { useSelectedCourse } from '../../../context/SelectedCourseContext';
 import CourseNode from '../../../components/nodes/CourseNode';
@@ -20,7 +20,6 @@ const FlowComponent = () => {
   const { fitView } = useReactFlow();
 
   const AddCourse = (course: Course) => {
-    console.log(course?.title);
     const newNode = {
       id: `${course.code}`,
       type: 'courseNode',
@@ -40,6 +39,25 @@ const FlowComponent = () => {
       });
 
     setTimeout(() => fitView({ padding: 1 }), 100);
+  };
+
+  const DeleteCourse = (course: Course) => {
+    if (course) {
+      setNodes((nds) => nds.filter((node) => node.id !== course.code));
+      toast.error(`${course.code} was deleted`, {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+        className: 'toast-error',
+      });
+    }
+  };
+
+  const onNodesDelete: OnNodesDelete = (nodes) => {
+    nodes.forEach((node) => DeleteCourse(node.data.course));
   };
 
   useDelayedEffect(() => {
@@ -84,6 +102,7 @@ const FlowComponent = () => {
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
+        onNodesDelete={onNodesDelete}
         nodeTypes={nodeTypes}
         connectionLineStyle={connectionLineStyle}
         snapToGrid={true}

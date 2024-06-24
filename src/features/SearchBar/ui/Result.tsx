@@ -11,7 +11,7 @@ const Result = ({ course }: ResultProps) => {
     return (
         <div 
             className="flex flex-col p-4 border-b hover:bg-gray-100 cursor-pointer"
-            onClick={() => setSelectedCourse(course)}
+            onMouseDown={() => setSelectedCourse(course)}
         >
             <div className="flex justify-between">
                 <div className="font-bold">{course.code}</div>
