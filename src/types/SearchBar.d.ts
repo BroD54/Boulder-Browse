@@ -1,3 +1,7 @@
+interface GenericJsonData {
+    [key: string]: any;
+}
+
 interface Course {
     srcdb: string
     database_name: string
