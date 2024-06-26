@@ -1,5 +1,6 @@
 import { useSelectedCourse } from '../../../context/SelectedCourseContext'
 import getCourseDetails from '../../../services/api/GetCourseDetails'
+import getPrerequisites from '../../../utils/getPrerequisites'
 
 interface ResultProps {
     course: Course
@@ -11,8 +12,10 @@ const Result = ({ course }: ResultProps) => {
 
     const handleMouseDown = () => {
         setSelectedCourse(course)
-        const details = getCourseDetails(course.code)
-        console.log(details)
+        const details = getCourseDetails(course.code) as Course
+        const prereqs = getPrerequisites(course.code, details.restrict_info)
+        console.log(details.restrict_info)
+        console.log(prereqs)
     }
 
     return (
