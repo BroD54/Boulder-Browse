@@ -4,7 +4,7 @@ import Bar from './ui/Bar';
 import Results from './ui/Results';
 
 import data from '../../data/mock/2021Fall-2024Fall.json';
-const courses: Courses = data;
+const courses = data as Courses;
 
 const SearchBar = () => {
     const [results, setResults] = useState<Course[]>([]);

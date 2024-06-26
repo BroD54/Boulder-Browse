@@ -7,6 +7,10 @@ interface Course {
     database_name: string
     code: string
     title: string
+    crn: string[]
+    hours: string
+    restrict_info: string
+    description: string
 }
 
 interface Courses {

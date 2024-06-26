@@ -1,9 +1,9 @@
-import data from '../../data/complete_catalog_Fall2021-Fall2024.json';
+import data from "../../data/mock/2021Fall-2024Fall.json"
 
 const jsonData: GenericJsonData = data;
 
 const getCourseDetails = (targetCode: string): Course | null => {
-    const courses = jsonData.courses;
+    const courses = jsonData.results;
     let left = 0;
     let right = courses.length - 1;
 

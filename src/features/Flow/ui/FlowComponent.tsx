@@ -1,5 +1,5 @@
 import { useEffect, useCallback, useState } from 'react';
-import ReactFlow, { useNodesState, useEdgesState, addEdge, Controls, Position, Background, useReactFlow, OnNodesDelete } from 'reactflow';
+import ReactFlow, { useNodesState, useEdgesState, addEdge, Controls, Position, Background, useReactFlow, OnNodesDelete, Node, MiniMap } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { useSelectedCourse } from '../../../context/SelectedCourseContext';
 import CourseNode from '../../../components/nodes/CourseNode';
@@ -81,6 +81,10 @@ const FlowComponent = () => {
       }
     });
   };
+
+  const handleNodeClick = (node: Node<any, string | undefined>) => {
+    console.log(node.id)
+  }
   
   useDelayedEffect(() => {
     if (selectedCourse != undefined) {
@@ -122,6 +126,7 @@ const FlowComponent = () => {
         nodes={nodes}
         edges={edges}
         onNodesChange={onNodesChange}
+        onNodeClick={(_event, node) => handleNodeClick(node)}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         onNodesDelete={onNodesDelete}
@@ -135,6 +140,7 @@ const FlowComponent = () => {
       >
         <Background />
         <Controls />
+        <MiniMap />
       </ReactFlow>
       <ToastContainer />
     </div>
