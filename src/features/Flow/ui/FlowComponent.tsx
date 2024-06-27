@@ -20,6 +20,7 @@ const FlowComponent = () => {
   const { fitView } = useReactFlow();
   const [addedCourses, setAddedCourses] = useState<string[]>([])
   const [deletedCourses, setDeletedCourses] = useState<Set<string>>(new Set());
+  const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
 
   const AddCourse = (course: Course) => {
     if (!addedCourses.includes(course.code)) {
@@ -49,10 +50,8 @@ const FlowComponent = () => {
         progress: undefined,
         className: 'toast-success', // >
         });
-
-        fitView({ padding: 1 });
     } else {
-        // highlight the course that exists.
+        setSelectedNodeId(course.code)
     }
   };
 
@@ -83,7 +82,7 @@ const FlowComponent = () => {
   };
 
   const handleNodeClick = (node: Node<any, string | undefined>) => {
-    console.log(node.id)
+    setSelectedNodeId(node.id);
   }
   
   useDelayedEffect(() => {
@@ -123,7 +122,15 @@ const FlowComponent = () => {
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <ReactFlow
-        nodes={nodes}
+        nodes={nodes.map((node) => {
+          if (node.id === selectedNodeId) {
+            return {
+              ...node,
+              className: 'pulse'
+            };
+          }
+          return node;
+        })}
         edges={edges}
         onNodesChange={onNodesChange}
         onNodeClick={(_event, node) => handleNodeClick(node)}
