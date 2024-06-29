@@ -52,6 +52,15 @@ const FlowComponent = () => {
         });
     } else {
         setSelectedNodeId(course.code)
+        toast.warn(`${course.code} already exists`, {
+          position: "bottom-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          progress: undefined,
+          className: 'toast-warn', // >
+          });
     }
   };
 
