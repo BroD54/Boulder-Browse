@@ -7,6 +7,7 @@ import ReactFlow, {
   Background,
   useReactFlow,
   OnNodesDelete,
+  MiniMap,
   Node
 } from 'reactflow';
 import 'reactflow/dist/style.css';
@@ -152,6 +153,7 @@ const FlowComponent = () => {
       >
         <Background />
         <Controls />
+        <MiniMap />
       </ReactFlow>
       <ToastContainer />
     </div>
