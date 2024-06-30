@@ -16,12 +16,12 @@ const Bar = ({ onSearch, setShowResults }: SearchBarProps) => {
   const { control, watch, setValue } = useForm<SearchFormData>();
 
   // clear search bar
-  const { selectedCourse } = useSelectedCourse();
+  const { addCourse } = useSelectedCourse();
   useDelayedEffect(() => {
-    if (selectedCourse != undefined) {
+    if (addCourse != undefined) {
       setValue('searchQuery', '');
     }
-  }, [selectedCourse]);
+  }, [addCourse]);
 
   const searchQuery = watch('searchQuery', '');
 

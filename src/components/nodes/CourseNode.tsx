@@ -13,7 +13,7 @@ const CourseNode = memo(({ data }: CourseNodeProps) => {
   const course = data.course
 
   return (
-    <div className="bg-white p-2 border border-black rounded w-60">
+    <div className="bg-white p-2 border border-black rounded w-60 hover:bg-slate-50 hover:border-2">
       <Handle
         type="target"
         position={Position.Top}

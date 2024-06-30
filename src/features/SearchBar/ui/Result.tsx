@@ -8,10 +8,10 @@ interface ResultProps {
 
 
 const Result = ({ course }: ResultProps) => {
-    const { setSelectedCourse } = useSelectedCourse();
+    const { setAddCourse } = useSelectedCourse();
 
     const handleMouseDown = () => {
-        setSelectedCourse(course)
+        setAddCourse(course)
         const details = getCourseDetails(course.code) as Course
         const prereqs = getPrerequisites(course.code, details.restrict_info)
         console.log(details.restrict_info)
