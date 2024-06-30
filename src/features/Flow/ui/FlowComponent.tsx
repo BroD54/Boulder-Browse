@@ -1,5 +1,14 @@
-import { useEffect, useCallback, useState } from 'react';
-import ReactFlow, { useNodesState, useEdgesState, addEdge, Controls, Position, Background, useReactFlow, OnNodesDelete, Node, MiniMap } from 'reactflow';
+import { useCallback, useState } from 'react';
+import ReactFlow, {
+  useNodesState,
+  useEdgesState,
+  addEdge,
+  Controls,
+  Background,
+  useReactFlow,
+  OnNodesDelete,
+  Node
+} from 'reactflow';
 import 'reactflow/dist/style.css';
 import { useSelectedCourse } from '../../../context/SelectedCourseContext';
 import CourseNode from '../../../components/nodes/CourseNode';
@@ -13,54 +22,62 @@ const nodeTypes = {
   courseNode: CourseNode,
 };
 
-const defaultViewport = { x: 0, y: 0, zoom: 1.5 };
+const defaultViewport = { x: 0, y: 0, zoom: 1 }; // Set initial zoom to 1
 
 const FlowComponent = () => {
-  const { selectedCourse } = useSelectedCourse();
-  const { fitView } = useReactFlow();
-  const [addedCourses, setAddedCourses] = useState<string[]>([])
+  const { setSelectedCourse, addCourse } = useSelectedCourse();
+  const { getZoom } = useReactFlow();
+  const [addedCourses, setAddedCourses] = useState<string[]>([]);
   const [deletedCourses, setDeletedCourses] = useState<Set<string>>(new Set());
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
+  const [nodes, setNodes, onNodesChange] = useNodesState([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
   const AddCourse = (course: Course) => {
     if (!addedCourses.includes(course.code)) {
-        if (deletedCourses.has(course.code)) {
+      if (deletedCourses.has(course.code)) {
         setDeletedCourses((prev) => {
-            const newSet = new Set(prev);
-            newSet.delete(course.code);
-            return newSet;
+          const newSet = new Set(prev);
+          newSet.delete(course.code);
+          return newSet;
         });
-        }
+      }
 
-        const newNode = {
+      // Get the viewport dimensions and center position
+      const centerX = document.documentElement.clientWidth / 2 - 240 / 2;
+      const centerY = document.documentElement.clientHeight / 2;
+      const zoom = getZoom();
+
+
+      const newNode = {
         id: `${course.code}`,
         type: 'courseNode',
-        position: { x: 0, y: 0 },
+        position: { x: centerX / zoom, y: centerY / zoom },
         data: { course },
-        };
-        setNodes((nds) => [...nds, newNode]);
-        setAddedCourses([...addedCourses, course.code])
+      };
+      setNodes((nds) => [...nds, newNode]);
+      setAddedCourses([...addedCourses, course.code]);
 
-        toast.success(`${course.code} was added`, {
-        position: "bottom-right",
+      toast.success(`${course.code} was added`, {
+        position: 'bottom-right',
         autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         progress: undefined,
         className: 'toast-success', // >
-        });
+      });
     } else {
-        setSelectedNodeId(course.code)
-        toast.warn(`${course.code} already exists`, {
-          position: "bottom-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          progress: undefined,
-          className: 'toast-warn', // >
-          });
+      setSelectedNodeId(course.code);
+      toast.warn(`${course.code} already exists`, {
+        position: 'bottom-right',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+        className: 'toast-warn', // >
+      });
     }
   };
 
@@ -70,7 +87,7 @@ const FlowComponent = () => {
       setDeletedCourses((prev) => new Set(prev).add(course.code));
 
       toast.error(`${course.code} was deleted`, {
-        position: "bottom-right",
+        position: 'bottom-right',
         autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -92,35 +109,15 @@ const FlowComponent = () => {
 
   const handleNodeClick = (node: Node<any, string | undefined>) => {
     setSelectedNodeId(node.id);
-  }
-  
+    setSelectedCourse(node.data.course)
+
+  };
+
   useDelayedEffect(() => {
-    if (selectedCourse != undefined) {
-      AddCourse(selectedCourse);
+    if (addCourse != undefined) {
+      AddCourse(addCourse);
     }
-  }, [selectedCourse]);
-
-  const [nodes, setNodes, onNodesChange] = useNodesState([]);
-  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
-
-  useEffect(() => {
-    setNodes([
-      {
-        id: '1',
-        type: 'output',
-        data: { label: 'Pre-requisite 1' },
-        position: { x: -100, y: 200 },
-        targetPosition: Position.Top,
-      },
-      {
-        id: '2',
-        type: 'output',
-        data: { label: 'Pre-requisite 2' },
-        position: { x: 100, y: 200 },
-        targetPosition: Position.Top,
-      },
-    ]);
-  }, []);
+  }, [addCourse]);
 
   const onConnect = useCallback(
     (params: any) =>
@@ -151,12 +148,10 @@ const FlowComponent = () => {
         snapToGrid={true}
         snapGrid={snapGrid}
         defaultViewport={defaultViewport}
-        fitView
         attributionPosition="bottom-left"
       >
         <Background />
         <Controls />
-        <MiniMap />
       </ReactFlow>
       <ToastContainer />
     </div>
