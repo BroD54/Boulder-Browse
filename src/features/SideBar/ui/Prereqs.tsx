@@ -7,6 +7,10 @@ interface PrereqsProps {
 
 const Prereqs = ({ code, restrict_info }: PrereqsProps) => {
     const prereq_tree = getPrerequisites(code, restrict_info)
+
+    const handlePrereqAdd = (root: CourseNode, child: CourseNode) => {
+        console.log(root.courseCode + " --> " + child.courseCode)
+    }
     
     return (
         <>
@@ -17,7 +21,9 @@ const Prereqs = ({ code, restrict_info }: PrereqsProps) => {
                     <>
                         <li className='ml-8' key={`child-${i}`}>{child.courseCode}</li>
                         {child.children?.map((grandchild, i) => (
-                            <li className='ml-16' key={`grandchildchild-${i}`}>{grandchild.courseCode}</li>
+                            <li className='ml-16' key={`grandchildchild-${i}`}>
+                                <a className='cursor-pointer text-cyan-600 hover:underline' onClick={() => handlePrereqAdd(prereq_tree, grandchild)}>{grandchild.courseCode}</a>
+                            </li>
                         ))}
                     </>
                 )) : 
