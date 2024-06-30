@@ -1,11 +1,11 @@
-import { useEffect, EffectCallback, useRef } from 'react';
+import { useEffect, EffectCallback, useState } from 'react';
 
 const useDelayedEffect = (effect: EffectCallback, deps: any[] = []) => {
-  const isInitialMount = useRef(true);
+  const [isMount, setIsMount] = useState(true)
 
   useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false;
+    if (isMount) {
+      setIsMount(false)
     } else {
       effect();
     }
