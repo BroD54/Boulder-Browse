@@ -1,8 +1,3 @@
-interface CourseNode {
-    courseCode: string;
-    children?: CourseNode[];
-}
-
 const getPrerequisites = (code: string, restrict_info: string): CourseNode => {
     const root: CourseNode = { courseCode: code };
     root.children = [];
