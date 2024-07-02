@@ -9,7 +9,7 @@ const getPrerequisites = (code: string, restrict_info: string): CourseNode => {
     }
   
     const coursePattern = /[A-Z]{4} \d{4}/g;
-    const andParts = restrict_info.split(/\band\b/i);
+    const andParts = restrict_info.split(/\band\b|&amp;/i);
   
     for (const andPart of andParts) {
       const orParts = andPart.split(/\bor\b/i);
