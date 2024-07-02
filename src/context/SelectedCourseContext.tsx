@@ -13,9 +13,10 @@ export const useSelectedCourse = () => {
 export const SelectedCourseProvider = ({ children }: { children: ReactNode }) => {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [addCourse, setAddCourse] = useState<Course | null>(null);
+  const [edge, setEdge] = useState<[string, string] | null>(null);
 
   return (
-    <SelectedCourseContext.Provider value={{ selectedCourse, setSelectedCourse, addCourse, setAddCourse }}>
+    <SelectedCourseContext.Provider value={{ selectedCourse, setSelectedCourse, addCourse, setAddCourse, edge, setEdge }}>
       {children}
     </SelectedCourseContext.Provider>
   );

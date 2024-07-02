@@ -1,4 +1,6 @@
 import getPrerequisites from '../../../utils/getPrerequisites'
+import { useSelectedCourse } from '../../../context/SelectedCourseContext'
+import getCourseDetails from '../../../services/api/GetCourseDetails'
 
 interface PrereqsProps {
     code: string
@@ -6,10 +8,16 @@ interface PrereqsProps {
 }
 
 const Prereqs = ({ code, restrict_info }: PrereqsProps) => {
+    const { setAddCourse, setEdge } = useSelectedCourse()
     const prereq_tree = getPrerequisites(code, restrict_info)
 
     const handlePrereqAdd = (root: CourseNode, child: CourseNode) => {
         console.log(root.courseCode + " --> " + child.courseCode)
+        const course = getCourseDetails(child.courseCode)
+        if (course != null) {
+            setAddCourse(course)
+            setEdge([root.courseCode, child.courseCode])        
+        }
     }
     
     return (

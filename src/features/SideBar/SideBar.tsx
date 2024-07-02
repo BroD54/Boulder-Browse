@@ -23,6 +23,10 @@ const SideBar = () => {
         setHideSideBar(true)
     }
 
+    if (selectedCourse == null){
+        return
+    }
+
     return (
         <div className={`${hideSideBar && "hidden"} fixed right-4 bottom-4 w-80 h-4/5 bg-white shadow-md p-6 rounded-lg border border-gray-200 overflow-auto z-10`} onMouseDown={handleMouseDown}>
             <div className="flex justify-between items-center h-12">
