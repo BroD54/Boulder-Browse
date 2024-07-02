@@ -15,6 +15,7 @@ import CourseNode from '../../../components/nodes/CourseNode';
 import useDelayedEffect from '../../../hooks/useDelayedEffect';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import FlowData from "../../../data/flow/FlowData.json"
 
 const connectionLineStyle = { stroke: '#2D2D2D' };
 const snapGrid = [20, 20] as [number, number];
@@ -28,8 +29,8 @@ const FlowComponent = () => {
   const { selectedCourse, setSelectedCourse, addCourse, setAddCourse, edge } = useSelectedCourse();
   const [addedCourses, setAddedCourses] = useState<string[]>([]);
   const [deletedCourses, setDeletedCourses] = useState<Set<string>>(new Set());
-  const [nodes, setNodes, onNodesChange] = useNodesState([]);
-  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+  const [nodes, setNodes, onNodesChange] = useNodesState(FlowData.nodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(FlowData.edges);
 
   const addEdgeBetweenCourses = (sourceCode: string, targetCode: string) => {
     const newEdge = {
@@ -163,6 +164,7 @@ const FlowComponent = () => {
         snapGrid={snapGrid}
         defaultViewport={defaultViewport}
         attributionPosition="bottom-left"
+        minZoom={0.35}
       >
         <Background />
         <Controls />

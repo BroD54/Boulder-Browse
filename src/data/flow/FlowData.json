@@ -1,0 +1,920 @@
+{
+    "nodes": [
+        {
+            "id": "CSCI 4239",
+            "type": "courseNode",
+            "position": {
+                "x": 240,
+                "y": 0
+            },
+            "data": {
+                "course": {
+                    "code": "CSCI 4239",
+                    "title": "Advanced Computer Graphics",
+                    "hours": "3",
+                    "srcdb": "2241",
+                    "database_name": "Spring 2024",
+                    "crn": [
+                        "37254",
+                        "37255"
+                    ],
+                    "restrict_info": "Requires prerequisite course of CSCI 4229 (minimum grade C-).",
+                    "description": "Studies design, analysis and implementation of advanced computer graphics techniques. Topics include shaders, using the GPU for high performance computing, graphics programming on embedded devices such as mobile phones; advanced graphics techniques such as ray tracing. Same as <a href=\"/search/?p=CSCI%205239\" data-action=\"result-detail\" data-group=\"code:CSCI 5239\" >CSCI 5239</a>."
+                }
+            },
+            "width": 240,
+            "height": 58,
+            "selected": false,
+            "positionAbsolute": {
+                "x": 240,
+                "y": 0
+            },
+            "dragging": false
+        },
+        {
+            "id": "CSCI 4229",
+            "type": "courseNode",
+            "position": {
+                "x": 340,
+                "y": 200
+            },
+            "data": {
+                "course": {
+                    "code": "CSCI 4229",
+                    "title": "Computer Graphics",
+                    "hours": "3",
+                    "srcdb": "2247",
+                    "database_name": "Fall 2024",
+                    "crn": [
+                        "30814",
+                        "30815"
+                    ],
+                    "restrict_info": "Requires prerequisite course of CSCI 2270 or CSCI 2275 (minimum grade C-).",
+                    "description": "Studies design, analysis and implementation of computer graphics techniques. Topics include interactive techniques, 3D viewing and models, clipping, transformations, projection, removal of hidden surfaces, lighting, textures and shadows. Knowledge of basic linear algebra is required. Same as <a href=\"/search/?p=CSCI%205229\" data-action=\"result-detail\" data-group=\"code:CSCI 5229\" >CSCI 5229</a>."
+                }
+            },
+            "width": 240,
+            "height": 50,
+            "selected": false,
+            "dragging": false,
+            "positionAbsolute": {
+                "x": 340,
+                "y": 200
+            }
+        },
+        {
+            "id": "CSCI 2270",
+            "type": "courseNode",
+            "position": {
+                "x": 800,
+                "y": 520
+            },
+            "data": {
+                "course": {
+                    "code": "CSCI 2270",
+                    "title": "Computer Science 2: Data Structures",
+                    "hours": "Varies by section",
+                    "srcdb": "2247",
+                    "database_name": "Fall 2024",
+                    "crn": [
+                        "30703",
+                        "30704",
+                        "30705",
+                        "30706",
+                        "30707",
+                        "30708",
+                        "30709",
+                        "30710",
+                        "30711",
+                        "30712"
+                    ],
+                    "restrict_info": "Requires prerequisite course of ((CSCI 1300 or CSCI 1320 or ECEN 1310 minimum grade C-) or (ASEN 1320 minimum grade B-)) and prerequisite or corequisite course of (MATH 1300 or MATH 1310 or APPM 1345 or APPM 1350 minimum grade C-).",
+                    "description": "Studies data abstractions (e.g., stacks, queues, lists, trees, graphs, heaps, hash tables, priority queues) and their representation techniques (e.g., linking, arrays). Introduces concepts used in algorithm design and analysis including criteria for selecting data structures to fit their applications. Knowledge OF C++ is highly recommended. Degree credit not granted for this course and <a href=\"/search/?p=CSCI%202275\" data-action=\"result-detail\" data-group=\"code:CSCI 2275\" >CSCI 2275</a>. Same as <a href=\"/search/?p=CSPB%202270\" data-action=\"result-detail\" data-group=\"code:CSPB 2270\" >CSPB 2270</a>."
+                }
+            },
+            "width": 240,
+            "height": 58,
+            "selected": false,
+            "dragging": false,
+            "positionAbsolute": {
+                "x": 800,
+                "y": 520
+            }
+        },
+        {
+            "id": "CSCI 1300",
+            "type": "courseNode",
+            "position": {
+                "x": 640,
+                "y": 780
+            },
+            "data": {
+                "course": {
+                    "code": "CSCI 1300",
+                    "title": "Computer Science 1: Starting Computing",
+                    "hours": "Varies by section",
+                    "srcdb": "2247",
+                    "database_name": "Fall 2024",
+                    "crn": [
+                        "30676",
+                        "30677",
+                        "30678",
+                        "30679",
+                        "30680",
+                        "30681",
+                        "30682",
+                        "30683",
+                        "30684",
+                        "30685",
+                        "30686",
+                        "30687",
+                        "30688",
+                        "30689",
+                        "30690",
+                        "30691",
+                        "30692",
+                        "30693",
+                        "30694",
+                        "30695",
+                        "30696",
+                        "30697",
+                        "30698",
+                        "30699",
+                        "30700",
+                        "30701",
+                        "30702"
+                    ],
+                    "restrict_info": "Requires a prerequisite or corequisite course of APPM 1235 or APPM 1340 or APPM 1345 or APPM 1350 or MATH 1150 or MATH 1300 or MATH 1310 (all minimum grade C-).",
+                    "description": "Teaches techniques for writing computer programs in higher level programming languages to solve problems of interest in a range of application domains. Appropriate for students with little to no experience in computing or programming. Degree credit not granted for this course and <a href=\"/search/?p=CSCI%201310\" data-action=\"result-detail\" data-group=\"code:CSCI 1310\"  class=\"notoffered\">CSCI 1310</a> or <a href=\"/search/?p=CSCI%201320\" data-action=\"result-detail\" data-group=\"code:CSCI 1320\"  class=\"notoffered\">CSCI 1320</a> or <a href=\"/search/?p=ECEN%201310\" data-action=\"result-detail\" data-group=\"code:ECEN 1310\" >ECEN 1310</a>. Same as <a href=\"/search/?p=CSPB%201300\" data-action=\"result-detail\" data-group=\"code:CSPB 1300\" >CSPB 1300</a>."
+                }
+            },
+            "width": 240,
+            "height": 58,
+            "selected": false,
+            "positionAbsolute": {
+                "x": 640,
+                "y": 780
+            },
+            "dragging": false
+        },
+        {
+            "id": "MATH 1300",
+            "type": "courseNode",
+            "position": {
+                "x": 740,
+                "y": 1080
+            },
+            "data": {
+                "course": {
+                    "code": "MATH 1300",
+                    "title": "Calculus 1",
+                    "hours": "5",
+                    "srcdb": "2247",
+                    "database_name": "Fall 2024",
+                    "crn": [
+                        "22955",
+                        "22956",
+                        "22957",
+                        "22954",
+                        "22958",
+                        "22959",
+                        "22960",
+                        "22961",
+                        "22962",
+                        "22963",
+                        "22964",
+                        "22965",
+                        "22966",
+                        "22967",
+                        "22968",
+                        "22969",
+                        "22970",
+                        "22971",
+                        "22972",
+                        "22973",
+                        "22974",
+                        "22975",
+                        "27562",
+                        "32035",
+                        "38870"
+                    ],
+                    "restrict_info": "Requires prerequisite course of MATH 1011 and MATH 1021 or MATH 1150 or MATH 1160 or APPM 1235 (minimum grade C-) or an ALEKS math exam taken in 2016 or earlier, or placement into calculus based on your admissions  data and/or CU Boulder coursework.",
+                    "description": "Topics include limits, derivatives of algebraic and transcendental functions, applications of the derivative, integration and applications of the definite integral. Students who have already earned college credit for calculus 1 are eligible to enroll in this course if they want to solidify their knowledge base in calculus 1. For more information about the math placement referred to in the &quot;Enrollment Requirements&quot;, contact your academic advisor. Degree credit not granted for this course and <a href=\"/search/?p=APPM%201345\" data-action=\"result-detail\" data-group=\"code:APPM 1345\"  class=\"notoffered\">APPM 1345</a> or <a href=\"/search/?p=APPM%201350\" data-action=\"result-detail\" data-group=\"code:APPM 1350\" >APPM 1350</a> or <a href=\"/search/?p=ECON%201088\" data-action=\"result-detail\" data-group=\"code:ECON 1088\" >ECON 1088</a> <a href=\"/search/?p=MATH%201081\" data-action=\"result-detail\" data-group=\"code:MATH 1081\"  class=\"notoffered\">MATH 1081</a> or <a href=\"/search/?p=MATH%201310\" data-action=\"result-detail\" data-group=\"code:MATH 1310\" >MATH 1310</a> or <a href=\"/search/?p=MATH%201330\" data-action=\"result-detail\" data-group=\"code:MATH 1330\"  class=\"notoffered\">MATH 1330</a>."
+                }
+            },
+            "width": 240,
+            "height": 66,
+            "selected": true,
+            "positionAbsolute": {
+                "x": 740,
+                "y": 1080
+            },
+            "dragging": false
+        },
+        {
+            "id": "CSCI 4240",
+            "type": "courseNode",
+            "position": {
+                "x": 1400,
+                "y": 120
+            },
+            "data": {
+                "course": {
+                    "code": "CSCI 4240",
+                    "title": "Introduction to Blockchain",
+                    "hours": "3",
+                    "srcdb": "2231",
+                    "database_name": "Spring 2023",
+                    "crn": [
+                        "35506",
+                        "35508"
+                    ],
+                    "restrict_info": "Requires prerequisite courses of (CSCI 2270 or CSCI 2275) and (CSCI 2824 or ECEN 2703 or APPM 3170 or MATH 2001) (all minimum grade C-).",
+                    "description": "Examines an emerging technology known as blockchain. Blockchain refers to the distributed and decentralized database technology behind popular cryptocurrencies such as Bitcoin and Ethereum. However, it can be used to record and transfer any digital asset, not just currency. This course explores the fundamentals of blockchain technology and its application from three key perspectives: policy and governance, technology, and application. Students gain an understanding of key concepts and how to apply them in the industry. Same as <a href=\"/search/?p=CYBR%205240\" data-action=\"result-detail\" data-group=\"code:CYBR 5240\" >CYBR 5240</a> and <a href=\"/search/?p=CSCI%205240\" data-action=\"result-detail\" data-group=\"code:CSCI 5240\" >CSCI 5240</a>."
+                }
+            },
+            "width": 240,
+            "height": 58,
+            "selected": false,
+            "positionAbsolute": {
+                "x": 1400,
+                "y": 120
+            },
+            "dragging": false
+        },
+        {
+            "id": "CSCI 2824",
+            "type": "courseNode",
+            "position": {
+                "x": 1080,
+                "y": 560
+            },
+            "data": {
+                "course": {
+                    "code": "CSCI 2824",
+                    "title": "Discrete Structures",
+                    "hours": "3",
+                    "srcdb": "2247",
+                    "database_name": "Fall 2024",
+                    "crn": [
+                        "30727",
+                        "30728"
+                    ],
+                    "restrict_info": "Requires prerequisite courses of (ASEN 1320 or CSCI 1200 or CSCI 1300 or CSCI 1320 or CSCI 2275 or ECEN 1030 or ECEN 1310) and (APPM 1345 or APPM 1350 or MATH 1300 or MATH 1310) (all minimum grade C-).",
+                    "description": "Covers foundational materials for computer science that is often assumed in advanced courses. Topics include set theory, Boolean algebra, functions and relations, graphs, propositional and predicate calculus, proofs, mathematical induction, recurrence relations, combinatorics, discrete probability. Focuses on examples based on diverse applications of computer science. Recommended prerequisite: Calc 2 (<a href=\"/search/?p=APPM%201360\" data-action=\"result-detail\" data-group=\"code:APPM 1360\" >APPM 1360</a> or <a href=\"/search/?p=MATH%202300\" data-action=\"result-detail\" data-group=\"code:MATH 2300\" >MATH 2300</a>) is strongly recommended. Same as <a href=\"/search/?p=CSPB%202824\" data-action=\"result-detail\" data-group=\"code:CSPB 2824\" >CSPB 2824</a>."
+                }
+            },
+            "width": 240,
+            "height": 50,
+            "selected": false,
+            "positionAbsolute": {
+                "x": 1080,
+                "y": 560
+            },
+            "dragging": false
+        },
+        {
+            "id": "CSCI 4622",
+            "type": "courseNode",
+            "position": {
+                "x": 320,
+                "y": -240
+            },
+            "data": {
+                "course": {
+                    "code": "CSCI 4622",
+                    "title": "Machine Learning",
+                    "hours": "3",
+                    "srcdb": "2247",
+                    "database_name": "Fall 2024",
+                    "crn": [
+                        "31026"
+                    ],
+                    "restrict_info": "Requires prereqs (CSCI2270 or 2275) &amp; (1 of APPM3310,CSCI2820,MATH2130/2135) &amp; (1 of CSCI2824,ECEN2703,APPM3170,MATH2001) &amp; (1 of APPM3570,CHEN3010,CSCI 3022,CVEN 3227,ECEN 3810,ECON 3818,MATH 3510/4510,MCEN 3047,STAT 3100/4000/4520) (all min C-)",
+                    "description": "Introduces students to tools, methods, and theory to construct predictive and inferential models that learn from data. Focuses on supervised machine learning technique including practical and theoretical understanding of the most widely used algorithms (decision trees, support vector machines, ensemble methods, and neural networks). Emphasizes both efficient implementation of algorithms and understanding of mathematical foundations. Same as <a href=\"/search/?p=CSPB%204622\" data-action=\"result-detail\" data-group=\"code:CSPB 4622\" >CSPB 4622</a>."
+                }
+            },
+            "width": 240,
+            "height": 50,
+            "selected": false,
+            "positionAbsolute": {
+                "x": 320,
+                "y": -240
+            },
+            "dragging": false
+        },
+        {
+            "id": "CSCI 3022",
+            "type": "courseNode",
+            "position": {
+                "x": 520,
+                "y": -80
+            },
+            "data": {
+                "course": {
+                    "code": "CSCI 3022",
+                    "title": "Introduction to Data Science with Probability and Statistics",
+                    "hours": "3",
+                    "srcdb": "2247",
+                    "database_name": "Fall 2024",
+                    "crn": [
+                        "31014",
+                        "31015",
+                        "31016"
+                    ],
+                    "restrict_info": "Requires prerequisite course of (CSCI 2270 or CSCI 2275) and (APPM 1360 or MATH 2300) and (CSCI 2824 or ECEN 2703 or APPM 3170 or MATH 2001) (all minimum grade C-).",
+                    "description": "Introduces students to the tools methods and theory behind extracting insights from data. Covers algorithms of cleaning and munging data, probability theory and common distributions, statistical simulation, drawing inferences from data, and basic statistical modeling. Same as <a href=\"/search/?p=CSPB%203022\" data-action=\"result-detail\" data-group=\"code:CSPB 3022\" >CSPB 3022</a>."
+                }
+            },
+            "width": 240,
+            "height": 78,
+            "selected": false,
+            "positionAbsolute": {
+                "x": 520,
+                "y": -80
+            },
+            "dragging": false
+        },
+        {
+            "id": "MATH 2300",
+            "type": "courseNode",
+            "position": {
+                "x": 400,
+                "y": 620
+            },
+            "data": {
+                "course": {
+                    "code": "MATH 2300",
+                    "title": "Calculus 2",
+                    "hours": "5",
+                    "srcdb": "2247",
+                    "database_name": "Fall 2024",
+                    "crn": [
+                        "22983",
+                        "22984",
+                        "22985",
+                        "22982",
+                        "22986",
+                        "22987",
+                        "22988",
+                        "22989",
+                        "22990",
+                        "22991",
+                        "22992",
+                        "22993",
+                        "22994",
+                        "22995",
+                        "22996",
+                        "22997",
+                        "38871"
+                    ],
+                    "restrict_info": "Requires prerequisite course of MATH 1300 or MATH 1310 or APPM 1345 or APPM 1350 (minimum grade C-).",
+                    "description": "Continuation of <a href=\"/search/?p=MATH%201300\" data-action=\"result-detail\" data-group=\"code:MATH 1300\" >MATH 1300</a>. Topics include transcendental functions, methods of integration, polar coordinates, differential equations, improper integrals, infinite sequences and series, Taylor polynomials and Taylor series.  Department enforced prerequisite: <a href=\"/search/?p=MATH%201300\" data-action=\"result-detail\" data-group=\"code:MATH 1300\" >MATH 1300</a> or <a href=\"/search/?p=MATH%201310\" data-action=\"result-detail\" data-group=\"code:MATH 1310\" >MATH 1310</a> or <a href=\"/search/?p=APPM%201345\" data-action=\"result-detail\" data-group=\"code:APPM 1345\"  class=\"notoffered\">APPM 1345</a> or <a href=\"/search/?p=APPM%201350\" data-action=\"result-detail\" data-group=\"code:APPM 1350\" >APPM 1350</a> (minimum grade C-). Degree credit not granted for this course and <a href=\"/search/?p=APPM%201360\" data-action=\"result-detail\" data-group=\"code:APPM 1360\" >APPM 1360</a>."
+                }
+            },
+            "width": 240,
+            "height": 66,
+            "selected": false,
+            "positionAbsolute": {
+                "x": 400,
+                "y": 620
+            },
+            "dragging": false
+        },
+        {
+            "id": "CSCI 4722",
+            "type": "courseNode",
+            "position": {
+                "x": 0,
+                "y": -80
+            },
+            "data": {
+                "course": {
+                    "code": "CSCI 4722",
+                    "title": "Computer Vision",
+                    "hours": "3",
+                    "srcdb": "2241",
+                    "database_name": "Spring 2024",
+                    "crn": [
+                        "36287",
+                        "37296"
+                    ],
+                    "restrict_info": "Requires prerequisite courses of (APPM 2360 or APPM 3310 or CSCI 2820 or MATH 2130 or MATH 2135) and CSCI 3104 (all minimum grade C-).",
+                    "description": "Explores algorithms that can extract information about the world from images or sequences of images. Topics covered include: imaging models and camera calibration, early vision (filters, edges, texture, stereo, optical flow), mid-level vision (segmentation, tracking), vision-based control and object recognition. Recommended prerequisite: <a href=\"/search/?p=CSCI%203022\" data-action=\"result-detail\" data-group=\"code:CSCI 3022\" >CSCI 3022</a> or <a href=\"/search/?p=APPM%203570\" data-action=\"result-detail\" data-group=\"code:APPM 3570\" >APPM 3570</a> or <a href=\"/search/?p=STAT%204520\" data-action=\"result-detail\" data-group=\"code:STAT 4520\" >STAT 4520</a> or <a href=\"/search/?p=STAT%204000\" data-action=\"result-detail\" data-group=\"code:STAT 4000\" >STAT 4000</a> or <a href=\"/search/?p=CHEN%203010\" data-action=\"result-detail\" data-group=\"code:CHEN 3010\"  class=\"notoffered\">CHEN 3010</a> or <a href=\"/search/?p=CVEN%203227\" data-action=\"result-detail\" data-group=\"code:CVEN 3227\" >CVEN 3227</a> or <a href=\"/search/?p=MATH%203510\" data-action=\"result-detail\" data-group=\"code:MATH 3510\" >MATH 3510</a> or <a href=\"/search/?p=MATH%204510\" data-action=\"result-detail\" data-group=\"code:MATH 4510\" >MATH 4510</a> or <a href=\"/search/?p=ECEN%203810\" data-action=\"result-detail\" data-group=\"code:ECEN 3810\"  class=\"notoffered\">ECEN 3810</a> or <a href=\"/search/?p=ECON%203818\" data-action=\"result-detail\" data-group=\"code:ECON 3818\" >ECON 3818</a>. Same as <a href=\"/search/?p=CSCI%205722\" data-action=\"result-detail\" data-group=\"code:CSCI 5722\" >CSCI 5722</a>."
+                }
+            },
+            "width": 240,
+            "height": 50,
+            "selected": false,
+            "positionAbsolute": {
+                "x": 0,
+                "y": -80
+            },
+            "dragging": false
+        },
+        {
+            "id": "MATH 2130",
+            "type": "courseNode",
+            "position": {
+                "x": -80,
+                "y": 280
+            },
+            "data": {
+                "course": {
+                    "code": "MATH 2130",
+                    "title": "Introduction to Linear Algebra for Non-Mathematics Majors",
+                    "hours": "3",
+                    "srcdb": "2247",
+                    "database_name": "Fall 2024",
+                    "crn": [
+                        "23359",
+                        "23360",
+                        "23361",
+                        "23362",
+                        "23363",
+                        "23364"
+                    ],
+                    "restrict_info": "Requires prerequisite course of MATH 2300 or APPM 1360 (minimum grade C-).",
+                    "description": "Examines basic properties of systems of linear equations, vector spaces, inner products, linear independence, dimension, linear transformations, matrices, determinants, eigenvalues, eigenvectors and diagonalization. Intended for students who do not plan to major in Mathematics. Degree credit not granted for this course and <a href=\"/search/?p=MATH%202135\" data-action=\"result-detail\" data-group=\"code:MATH 2135\" >MATH 2135</a> or <a href=\"/search/?p=APPM%203310\" data-action=\"result-detail\" data-group=\"code:APPM 3310\" >APPM 3310</a>. Formerly <a href=\"/search/?p=MATH%203130\" data-action=\"result-detail\" data-group=\"code:MATH 3130\"  class=\"notoffered\">MATH 3130</a>."
+                }
+            },
+            "width": 240,
+            "height": 78,
+            "selected": false,
+            "positionAbsolute": {
+                "x": -80,
+                "y": 280
+            },
+            "dragging": false
+        },
+        {
+            "id": "CSCI 2400",
+            "type": "courseNode",
+            "position": {
+                "x": 1060,
+                "y": -220
+            },
+            "data": {
+                "course": {
+                    "code": "CSCI 2400",
+                    "title": "Computer Systems",
+                    "hours": "Varies by section",
+                    "srcdb": "2247",
+                    "database_name": "Fall 2024",
+                    "crn": [
+                        "30713",
+                        "30714",
+                        "30715",
+                        "30716",
+                        "30717",
+                        "30718",
+                        "30719",
+                        "30720",
+                        "30721",
+                        "30722",
+                        "30723",
+                        "30726"
+                    ],
+                    "restrict_info": "Requires prerequisite of CSCI 2270 or CSCI 2275 or ECEN 2370 (minimum grade C-).",
+                    "description": "Covers how programs are represented and executed by modern computers, including low-level machine representations of programs and data, an understanding of how computer components and the memory hierarchy influence performance. Same as <a href=\"/search/?p=CSPB%202400\" data-action=\"result-detail\" data-group=\"code:CSPB 2400\" >CSPB 2400</a>."
+                }
+            },
+            "width": 240,
+            "height": 50,
+            "selected": false,
+            "positionAbsolute": {
+                "x": 1060,
+                "y": -220
+            },
+            "dragging": false
+        },
+        {
+            "id": "CSCI 3090",
+            "type": "courseNode",
+            "position": {
+                "x": -400,
+                "y": -40
+            },
+            "data": {
+                "course": {
+                    "code": "CSCI 3090",
+                    "title": "Introduction to Quantum Computing",
+                    "hours": "3",
+                    "srcdb": "2241",
+                    "database_name": "Spring 2024",
+                    "crn": [
+                        "28665"
+                    ],
+                    "restrict_info": "Requires prerequisite course of APPM 2360 or APPM 3310 or CSCI 2820 or MATH 2130 or MATH 2135 (minimum grade C-).",
+                    "description": "Covers the basics of quantum computation, including the basics of quantum information; axioms of quantum mechanics; quantum circuits and universality; the relationship between quantum and classical complexity classes; simple quantum algorithms such as the quantum Fourier transform; Shor factoring algorithm; Grover search algorithm; physical implementation of quantum computation; error correction and fault tolerance. Same as <a href=\"/search/?p=PHYS%203090\" data-action=\"result-detail\" data-group=\"code:PHYS 3090\" >PHYS 3090</a> and <a href=\"/search/?p=ECEN%203090\" data-action=\"result-detail\" data-group=\"code:ECEN 3090\"  class=\"notoffered\">ECEN 3090</a>."
+                }
+            },
+            "width": 240,
+            "height": 58,
+            "selected": false,
+            "positionAbsolute": {
+                "x": -400,
+                "y": -40
+            },
+            "dragging": false
+        },
+        {
+            "id": "CSCI 3104",
+            "type": "courseNode",
+            "position": {
+                "x": 700,
+                "y": 40
+            },
+            "data": {
+                "course": {
+                    "code": "CSCI 3104",
+                    "title": "Algorithms",
+                    "hours": "Varies by section",
+                    "srcdb": "2247",
+                    "database_name": "Fall 2024",
+                    "crn": [
+                        "30774",
+                        "30775",
+                        "30776",
+                        "30777",
+                        "30778",
+                        "30779",
+                        "30781",
+                        "30782",
+                        "30783"
+                    ],
+                    "restrict_info": "Requires prerequisite courses of (CSCI 2270 or CSCI 2275) and (APPM 1360 or MATH 2300) and (one of the following: CSCI 2824 or ECEN 2703 or APPM 3170 or MATH 2001) (all minimum grade C-).",
+                    "description": "Covers the fundamentals of algorithms and various algorithmic strategies, including time and space complexity, sorting algorithms, recurrence relations, divide and conquer algorithms, greedy algorithms, dynamic programming, linear programming, graph algorithms, problems in P and NP, and approximation algorithms. Same as <a href=\"/search/?p=CSPB%203104\" data-action=\"result-detail\" data-group=\"code:CSPB 3104\" >CSPB 3104</a>."
+                }
+            },
+            "width": 240,
+            "height": 50,
+            "selected": false,
+            "positionAbsolute": {
+                "x": 700,
+                "y": 40
+            },
+            "dragging": false
+        },
+        {
+            "id": "CSCI 3155",
+            "type": "courseNode",
+            "position": {
+                "x": 880,
+                "y": -460
+            },
+            "data": {
+                "course": {
+                    "code": "CSCI 3155",
+                    "title": "Principles of Programming Languages",
+                    "hours": "Varies by section",
+                    "srcdb": "2247",
+                    "database_name": "Fall 2024",
+                    "crn": [
+                        "30780",
+                        "30784",
+                        "30785",
+                        "30786",
+                        "30787"
+                    ],
+                    "restrict_info": "Requires prerequisite courses of (CSCI 2270 or CSCI 2275) and (CSCI 2400 or ECEN 2360 or ECEN 3350) and (CSCI 2824 or ECEN 2703 or APPM 3170 or MATH 2001) (all minimum grade C-).",
+                    "description": "Studies principles governing the design and analysis of programming languages and their underlying execution models. Explores values, scoping, recursion, higher-order functions, type systems, control structures, and objects. Introduces formal semantics as a framework for understanding programming features. Introduces advanced programming concepts such as functional programming, higher-order functions, immutable values and structures, inductive types, functors, continuation-passing; and object-oriented programming using inheritance, generics and covariance/contravariance in a functional programming language such as Scala. Same as <a href=\"/search/?p=CSPB%203155\" data-action=\"result-detail\" data-group=\"code:CSPB 3155\" >CSPB 3155</a>."
+                }
+            },
+            "width": 240,
+            "height": 78,
+            "selected": false,
+            "dragging": false,
+            "positionAbsolute": {
+                "x": 880,
+                "y": -460
+            }
+        },
+        {
+            "id": "ECEN 3915",
+            "type": "courseNode",
+            "position": {
+                "x": -220,
+                "y": -200
+            },
+            "data": {
+                "course": {
+                    "code": "ECEN 3915",
+                    "title": "Foundations of Quantum Engineering",
+                    "hours": "3",
+                    "srcdb": "2247",
+                    "database_name": "Fall 2024",
+                    "crn": [
+                        "22750"
+                    ],
+                    "restrict_info": "Requires prerequisite courses of (ASEN 1320 OR ECEN 1310 OR ECEN 2310 OR CSCI 1300 OR APPM 3050 OR PHYS 2600) &amp; (MATH 3135 OR MATH 2130 OR MATH 2135 OR APPM 2360 OR APPM 3310 OR CSCI 2820) all minimum grade C-.",
+                    "description": "Introduces engineers to quantum theory. In this course you will learn how to describe many different physical systems (such as atoms, electrons, light, mechanical oscillators, and tops) mathematically. It also explores different notions of quantumness such as entanglement and non-contextuality. The foundations obtained in this course are important for further study of quantum hardware (sensors), communication, and computing. Recommended prerequisite: <a href=\"/search/?p=MATH%203430\" data-action=\"result-detail\" data-group=\"code:MATH 3430\" >MATH 3430</a> or <a href=\"/search/?p=APPM%202360\" data-action=\"result-detail\" data-group=\"code:APPM 2360\" >APPM 2360</a>. Formerly <a href=\"/search/?p=ECEN%204915\" data-action=\"result-detail\" data-group=\"code:ECEN 4915\"  class=\"notoffered\">ECEN 4915</a>. Degree credit not granted for this course and <a href=\"/search/?p=ECEN%205915\" data-action=\"result-detail\" data-group=\"code:ECEN 5915\" >ECEN 5915</a>."
+                }
+            },
+            "width": 240,
+            "height": 58,
+            "selected": false,
+            "positionAbsolute": {
+                "x": -220,
+                "y": -200
+            },
+            "dragging": false
+        },
+        {
+            "id": "CSCI 3302",
+            "type": "courseNode",
+            "position": {
+                "x": 1380,
+                "y": -320
+            },
+            "data": {
+                "course": {
+                    "code": "CSCI 3302",
+                    "title": "Introduction to Robotics",
+                    "hours": "Varies by section",
+                    "srcdb": "2247",
+                    "database_name": "Fall 2024",
+                    "crn": [
+                        "30975",
+                        "30976",
+                        "30977",
+                        "30978"
+                    ],
+                    "restrict_info": "Requires prerequisite courses of (CSCI 2270 or CSCI 2275) and (APPM 3170 or CSCI 2824 or ECEN 2703 or MATH 2001) and (APPM 2360 or APPM 3310 or CSCI 2820 or MATH 2130 or MATH 2135) (all minimum grade C-).",
+                    "description": "Introduces students to fundamental concepts in autonomous robotics: mechanisms, locomotion, kinematics, control, perception and planning. Consists of lectures and lab sessions that are geared toward developing a complete navigation stack on a miniature mobile robotic platform. Same as <a href=\"/search/?p=ECEN%203303\" data-action=\"result-detail\" data-group=\"code:ECEN 3303\" >ECEN 3303</a> and <a href=\"/search/?p=CSPB%203302\" data-action=\"result-detail\" data-group=\"code:CSPB 3302\"  class=\"notoffered\">CSPB 3302</a>."
+                }
+            },
+            "width": 240,
+            "height": 58,
+            "selected": false,
+            "positionAbsolute": {
+                "x": 1380,
+                "y": -320
+            },
+            "dragging": false
+        }
+    ],
+    "edges": [
+        {
+            "id": "CSCI 4239-CSCI 4229",
+            "source": "CSCI 4239",
+            "target": "CSCI 4229",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 4229-CSCI 2270",
+            "source": "CSCI 4229",
+            "target": "CSCI 2270",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 2270-CSCI 1300",
+            "source": "CSCI 2270",
+            "target": "CSCI 1300",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 2270-MATH 1300",
+            "source": "CSCI 2270",
+            "target": "MATH 1300",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 1300-MATH 1300",
+            "source": "CSCI 1300",
+            "target": "MATH 1300",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 4240-CSCI 2270",
+            "source": "CSCI 4240",
+            "target": "CSCI 2270",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 4240-CSCI 2824",
+            "source": "CSCI 4240",
+            "target": "CSCI 2824",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 2824-MATH 1300",
+            "source": "CSCI 2824",
+            "target": "MATH 1300",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 2824-CSCI 1300",
+            "source": "CSCI 2824",
+            "target": "CSCI 1300",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 4622-CSCI 3022",
+            "source": "CSCI 4622",
+            "target": "CSCI 3022",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 3022-CSCI 2270",
+            "source": "CSCI 3022",
+            "target": "CSCI 2270",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 3022-MATH 2300",
+            "source": "CSCI 3022",
+            "target": "MATH 2300",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "MATH 2300-MATH 1300",
+            "source": "MATH 2300",
+            "target": "MATH 1300",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 3022-CSCI 2824",
+            "source": "CSCI 3022",
+            "target": "CSCI 2824",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 4722-MATH 2130",
+            "source": "CSCI 4722",
+            "target": "MATH 2130",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "MATH 2130-MATH 2300",
+            "source": "MATH 2130",
+            "target": "MATH 2300",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 2400-CSCI 2270",
+            "source": "CSCI 2400",
+            "target": "CSCI 2270",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 3090-MATH 2130",
+            "source": "CSCI 3090",
+            "target": "MATH 2130",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 3104-CSCI 2270",
+            "source": "CSCI 3104",
+            "target": "CSCI 2270",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 3104-MATH 2300",
+            "source": "CSCI 3104",
+            "target": "MATH 2300",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 3104-CSCI 2824",
+            "source": "CSCI 3104",
+            "target": "CSCI 2824",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 3155-CSCI 2270",
+            "source": "CSCI 3155",
+            "target": "CSCI 2270",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 3155-CSCI 2400",
+            "source": "CSCI 3155",
+            "target": "CSCI 2400",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 3155-CSCI 2824",
+            "source": "CSCI 3155",
+            "target": "CSCI 2824",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "ECEN 3915-MATH 2130",
+            "source": "ECEN 3915",
+            "target": "MATH 2130",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "ECEN 3915-CSCI 1300",
+            "source": "ECEN 3915",
+            "target": "CSCI 1300",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 3302-CSCI 2270",
+            "source": "CSCI 3302",
+            "target": "CSCI 2270",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 3302-CSCI 2824",
+            "source": "CSCI 3302",
+            "target": "CSCI 2824",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        },
+        {
+            "id": "CSCI 3302-MATH 2130",
+            "source": "CSCI 3302",
+            "target": "MATH 2130",
+            "animated": false,
+            "style": {
+                "stroke": "#2D2D2D"
+            }
+        }
+    ]
+}
