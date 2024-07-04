@@ -660,6 +660,7 @@
             "source": "CSCI 4239",
             "target": "CSCI 4229",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -669,6 +670,7 @@
             "source": "CSCI 4229",
             "target": "CSCI 2270",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -678,6 +680,7 @@
             "source": "CSCI 2270",
             "target": "CSCI 1300",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -687,6 +690,7 @@
             "source": "CSCI 2270",
             "target": "MATH 1300",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -696,6 +700,7 @@
             "source": "CSCI 1300",
             "target": "MATH 1300",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -705,6 +710,7 @@
             "source": "CSCI 4240",
             "target": "CSCI 2270",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -714,6 +720,7 @@
             "source": "CSCI 4240",
             "target": "CSCI 2824",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -723,6 +730,7 @@
             "source": "CSCI 2824",
             "target": "MATH 1300",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -732,6 +740,7 @@
             "source": "CSCI 2824",
             "target": "CSCI 1300",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -741,6 +750,7 @@
             "source": "CSCI 4622",
             "target": "CSCI 3022",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -750,6 +760,7 @@
             "source": "CSCI 3022",
             "target": "CSCI 2270",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -759,6 +770,7 @@
             "source": "CSCI 3022",
             "target": "MATH 2300",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -768,6 +780,7 @@
             "source": "MATH 2300",
             "target": "MATH 1300",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -777,6 +790,7 @@
             "source": "CSCI 3022",
             "target": "CSCI 2824",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -786,6 +800,7 @@
             "source": "CSCI 4722",
             "target": "MATH 2130",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -795,6 +810,7 @@
             "source": "MATH 2130",
             "target": "MATH 2300",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -804,6 +820,7 @@
             "source": "CSCI 2400",
             "target": "CSCI 2270",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -813,6 +830,7 @@
             "source": "CSCI 3090",
             "target": "MATH 2130",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -822,6 +840,7 @@
             "source": "CSCI 3104",
             "target": "CSCI 2270",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -831,6 +850,7 @@
             "source": "CSCI 3104",
             "target": "MATH 2300",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -840,6 +860,7 @@
             "source": "CSCI 3104",
             "target": "CSCI 2824",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -849,6 +870,7 @@
             "source": "CSCI 3155",
             "target": "CSCI 2270",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -858,6 +880,7 @@
             "source": "CSCI 3155",
             "target": "CSCI 2400",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -867,6 +890,7 @@
             "source": "CSCI 3155",
             "target": "CSCI 2824",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -876,6 +900,7 @@
             "source": "ECEN 3915",
             "target": "MATH 2130",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -885,6 +910,7 @@
             "source": "ECEN 3915",
             "target": "CSCI 1300",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -894,6 +920,7 @@
             "source": "CSCI 3302",
             "target": "CSCI 2270",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -903,6 +930,7 @@
             "source": "CSCI 3302",
             "target": "CSCI 2824",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
@@ -912,6 +940,7 @@
             "source": "CSCI 3302",
             "target": "MATH 2130",
             "animated": false,
+            "type": "default",
             "style": {
                 "stroke": "#2D2D2D"
             }
