@@ -23,7 +23,9 @@ import ELK from 'elkjs/lib/elk.bundled.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faProjectDiagram, faExchangeAlt, faArrowRight, faTrash } from '@fortawesome/free-solid-svg-icons'; // Import the layout icon
 
-const connectionLineStyle = { stroke: '#2D2D2D' };
+const connectionLineStyle = { stroke: '#2D2D2D', strokeWidth: '2' };
+const sourceToTargetColor = '#00FFFF'
+const targetToSourceColor = '#32CD32'
 const snapGrid = [20, 20] as [number, number];
 const nodeTypes = {
   courseNode: CourseNode,
@@ -84,6 +86,34 @@ const FlowComponent = () => {
       addEdgeBetweenCourses(edge[0], edge[1]);
     }
   }, [edge]);
+
+  useDelayedEffect(() => {
+    const updatedEdges = edges.map(edge => {
+      if (edge.target == selectedCourse?.code){
+        return {
+          ...edge,
+          style: { 
+            "stroke": targetToSourceColor,
+            "strokeWidth": '4'
+          } 
+        }
+      } else if ( edge.source == selectedCourse?.code){
+        return {
+          ...edge,
+          style: { 
+            "stroke": sourceToTargetColor,
+            "strokeWidth": '4'
+          } 
+        }
+      } else {
+        return {
+          ...edge,
+          style: connectionLineStyle
+        }
+      }
+    });
+    setEdges(updatedEdges);
+  }, [selectedCourse])
 
   const AddCourse = (course: Course) => {
     if (!addedCourses.includes(course.code)) {
@@ -211,6 +241,11 @@ const FlowComponent = () => {
     setNodes(updatedNodes as Node[]);
   };
 
+  const handleClear = () => {
+    setNodes([]);
+    setEdges([]);
+  }
+
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <ReactFlow
@@ -249,7 +284,7 @@ const FlowComponent = () => {
           <ControlButton onClick={toggleEdgeType} title="switch edge type">
             <FontAwesomeIcon icon={faArrowRight} />
           </ControlButton>
-          <ControlButton onClick={() => setNodes([])} title="clear all">
+          <ControlButton onClick={handleClear} title="clear all">
             <FontAwesomeIcon icon={faTrash} />
           </ControlButton>
         </Controls>
