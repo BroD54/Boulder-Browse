@@ -21,7 +21,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import FlowData from "../../../data/flow/FlowData.json";
 import ELK from 'elkjs/lib/elk.bundled.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faProjectDiagram, faExchangeAlt, faArrowRight } from '@fortawesome/free-solid-svg-icons'; // Import the layout icon
+import { faProjectDiagram, faExchangeAlt, faArrowRight, faTrash } from '@fortawesome/free-solid-svg-icons'; // Import the layout icon
 
 const connectionLineStyle = { stroke: '#2D2D2D' };
 const snapGrid = [20, 20] as [number, number];
@@ -100,7 +100,7 @@ const FlowComponent = () => {
       const newNode: Node = {
         id: `${course.code}`,
         type: nodeType,
-        position: { x: Math.random() * 800, y: Math.random() * 800 },
+        position: { x: 0, y: 0 },
         data: { course },
       };
       
@@ -236,6 +236,7 @@ const FlowComponent = () => {
         defaultViewport={defaultViewport}
         attributionPosition="bottom-left"
         minZoom={0.35}
+        fitView
       >
         <Background />
         <Controls>
@@ -247,6 +248,9 @@ const FlowComponent = () => {
           </ControlButton>
           <ControlButton onClick={toggleEdgeType} title="switch edge type">
             <FontAwesomeIcon icon={faArrowRight} />
+          </ControlButton>
+          <ControlButton onClick={() => setNodes([])} title="clear all">
+            <FontAwesomeIcon icon={faTrash} />
           </ControlButton>
         </Controls>
         <MiniMap />
