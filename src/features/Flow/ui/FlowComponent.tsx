@@ -167,6 +167,7 @@ const FlowComponent = () => {
       setDeletedCourses((prev) => new Set(prev).add(course.code));
       setAddedCourses((prev) => prev.filter((code) => code !== course.code));
       setAddCourse(null);
+      setSelectedCourse(null);
 
       toast.error(`${course.code} was deleted`, {
         position: 'bottom-right',
