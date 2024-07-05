@@ -220,7 +220,14 @@ const FlowComponent = () => {
 
     const elkGraph = {
       id: 'root',
-      layoutOptions: { 'elk.algorithm': 'layered', 'elk.direction': layoutDirection },
+      layoutOptions: { 
+        'elk.algorithm': 'layered', 
+        'elk.direction': layoutDirection,
+        'elk.spacing.nodeNode': '20', // Space between nodes
+        'elk.spacing.nodeNodeBetweenLayers': '200', // Space between layers
+        'elk.layered.spacing.nodeNode': '20', // Space between nodes in a layer
+        'elk.layered.spacing.nodeNodeBetweenLayers': '200' // Space between layers
+      },
       children: nodes.map(node => ({
         id: node.id,
         width: 240,
