@@ -57,7 +57,7 @@ const FlowComponent = () => {
       setEdges(JSON.parse(savedEdges));
     }
 
-    if (nodes.length == 0){
+    if (JSON.parse(savedNodes as string).length == 0){
       setNodes(FlowData.nodes)
       setEdges(FlowData.edges)
     }
