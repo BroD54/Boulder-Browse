@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactFlow, {
   useNodesState,
   useEdgesState,
@@ -38,12 +38,35 @@ const FlowComponent = () => {
   const { selectedCourse, setSelectedCourse, addCourse, setAddCourse, edge } = useSelectedCourse();
   const [addedCourses, setAddedCourses] = useState<string[]>([]);
   const [deletedCourses, setDeletedCourses] = useState<Set<string>>(new Set());
-  const [nodes, setNodes, onNodesChange] = useNodesState(FlowData.nodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(FlowData.edges);
+  const [nodes, setNodes, onNodesChange] = useNodesState([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [nodeType, setNodeType] = useState('courseNode');
   const [edgeType, setEdgeType] = useState('default');
   const [isHorizontalLayout, setIsHorizontalLayout] = useState(true);
   const [isLayoutLocked, setIsLayoutLocked] = useState(false);
+
+  useEffect(() => {
+    const savedNodes = localStorage.getItem('nodes');
+    const savedEdges = localStorage.getItem('edges');
+
+    if (savedNodes) {
+      setNodes(JSON.parse(savedNodes));
+    }
+
+    if (savedEdges) {
+      setEdges(JSON.parse(savedEdges));
+    }
+
+    if (nodes.length == 0){
+      setNodes(FlowData.nodes)
+      setEdges(FlowData.edges)
+    }
+  }, []);
+
+  useDelayedEffect(() => {
+    localStorage.setItem('nodes', JSON.stringify(nodes));
+    localStorage.setItem('edges', JSON.stringify(edges));
+  }, [nodes, edges]);
 
   const toggleNodeType = () => {
     const newType = nodeType === 'courseNode' ? 'horizontalCourseNode' : 'courseNode';
