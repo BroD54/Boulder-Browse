@@ -21,7 +21,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import FlowData from "../../../data/flow/FlowData.json";
 import ELK from 'elkjs/lib/elk.bundled.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faProjectDiagram, faExchangeAlt, faArrowRight, faTrash } from '@fortawesome/free-solid-svg-icons'; // Import the layout icon
+import { faProjectDiagram, faExchangeAlt, faArrowRight, faTrash, faTh } from '@fortawesome/free-solid-svg-icons'; // Import the layout icon
 
 const connectionLineStyle = { stroke: '#2D2D2D', strokeWidth: '2' };
 const sourceToTargetColor = '#00FFFF'
@@ -43,6 +43,7 @@ const FlowComponent = () => {
   const [nodeType, setNodeType] = useState('courseNode');
   const [edgeType, setEdgeType] = useState('default');
   const [isHorizontalLayout, setIsHorizontalLayout] = useState(true);
+  const [isLayoutLocked, setIsLayoutLocked] = useState(false);
 
   const toggleNodeType = () => {
     const newType = nodeType === 'courseNode' ? 'horizontalCourseNode' : 'courseNode';
@@ -208,10 +209,13 @@ const FlowComponent = () => {
   };
 
 
-  const handleLayout = async () => {
+  const handleLayout = async (layoutDirection = isHorizontalLayout ? 'DOWN' : 'RIGHT') => {
     const elk = new ELK();
-    const layoutDirection = isHorizontalLayout ? 'DOWN' : 'RIGHT';
-    setIsHorizontalLayout(!isHorizontalLayout)
+    if (layoutDirection == 'DOWN') {
+      setIsHorizontalLayout(false)
+    } else {
+      setIsHorizontalLayout(true)
+    }
 
     const elkGraph = {
       id: 'root',
@@ -245,6 +249,13 @@ const FlowComponent = () => {
     setNodes([]);
     setEdges([]);
   }
+  
+  useDelayedEffect(() => {
+    if (isLayoutLocked){
+      const dir = isHorizontalLayout ? 'RIGHT' : 'DOWN'
+      handleLayout( dir)
+    }
+  }, [nodes.length, edges.length])
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
@@ -275,8 +286,11 @@ const FlowComponent = () => {
       >
         <Background />
         <Controls>
-          <ControlButton onClick={handleLayout} title="auto layout" >
+          <ControlButton onClick={() => handleLayout()} title="auto layout" >
             <FontAwesomeIcon icon={faProjectDiagram} />
+          </ControlButton>
+          <ControlButton onClick={() => setIsLayoutLocked(true)} title="layout lock" >
+            <FontAwesomeIcon icon={faTh} />
           </ControlButton>
           <ControlButton onClick={toggleNodeType} title="flip node direction">
             <FontAwesomeIcon icon={faExchangeAlt} />
