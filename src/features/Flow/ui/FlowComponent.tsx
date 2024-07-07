@@ -280,6 +280,26 @@ const FlowComponent = () => {
     setNodes([]);
     setEdges([]);
   }
+
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    const attribute = event.dataTransfer.getData('attribute');
+    const targetElement = event.target as HTMLElement;
+    const targetId = targetElement.closest('.react-flow__node')?.getAttribute('data-id');
+    const targetNode = nodes.find(node => node.id === targetId);
+  
+    if (targetNode) {
+      console.log(attribute)
+      console.log(targetNode.data.course.code); // Log the course code
+    }
+  };
+  
+  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    event.dataTransfer.dropEffect = "move"
+
+  };
+  
   
   useDelayedEffect(() => {
     if (isLayoutLocked){
@@ -306,6 +326,8 @@ const FlowComponent = () => {
         onEdgesChange={onEdgesChange}
         onConnect={handleAddEdge}
         onNodesDelete={onNodesDelete}
+        onDrop={handleDrop}
+        onDragOver={handleDragOver}
         nodeTypes={nodeTypes}
         connectionLineStyle={connectionLineStyle}
         snapToGrid={true}
