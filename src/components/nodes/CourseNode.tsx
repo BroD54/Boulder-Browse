@@ -15,7 +15,7 @@ const CourseNode = memo(({ data }: CourseNodeProps) => {
   const course = data.course
 
   return (
-    <div className={`${data.color ?? 'bg-white'} p-2 border border-black rounded w-60 hover:cursor-move`}>
+    <div className={`border-black bg-white p-2 border rounded w-60 hover:cursor-move`}>
       <Handle
         type="target"
         position={Position.Top}
@@ -33,6 +33,11 @@ const CourseNode = memo(({ data }: CourseNodeProps) => {
           <div className="whitespace-normal break-words text-sm">{course.title}</div>
         </div>
       </div>
+      {data.label && data.color != "black" && (
+        <div className={`relative bottom-0 right-0 left-0 bg-${data.color} text-xs text-center rounded`}>
+          {data.label}
+        </div>
+      )}
       <Handle
         type="source"
         position={Position.Bottom}

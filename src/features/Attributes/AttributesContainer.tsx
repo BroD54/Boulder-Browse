@@ -2,12 +2,13 @@ import React from 'react';
 import DraggableAttribute from './DraggableAttribute';
 
 const attributes: Attribute[] = [
-  { name: 'Freshman', label: 'Freshman Year', color: 'bg-blue-200' },
-  { name: 'Sophomore', label: 'Sophomore Year', color: 'bg-green-200' },
-  { name: 'Junior', label: 'Junior Year', color: 'bg-orange-200' },
-  { name: 'Senior', label: 'Senior Year', color: 'bg-red-200' },
-  { name: 'Transfer', label: 'Transfer Credit', color: 'bg-yellow-200' },
-  { name: 'Summer', label: 'Summer', color: 'bg-gray-200' },
+  { name: 'Freshman', label: 'Freshman Year', color: 'red-200' },
+  { name: 'Sophomore', label: 'Sophomore Year', color: 'orange-200' },
+  { name: 'Junior', label: 'Junior Year', color: 'yellow-200' },
+  { name: 'Senior', label: 'Senior Year', color: 'green-200' },
+  { name: 'Transfer', label: 'Transfer Credit', color: 'blue-200' },
+  { name: 'Summer', label: 'Summer', color: 'purple-200' },
+  { name: 'Remove', label: 'Remove attribute', color: 'black'}
 ];
 
 const AttributesContainer: React.FC = () => {
