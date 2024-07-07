@@ -283,15 +283,24 @@ const FlowComponent = () => {
 
   const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
-    const attribute = event.dataTransfer.getData('attribute');
+    const color = event.dataTransfer.getData('color');
+    const label = event.dataTransfer.getData('label');
     const targetElement = event.target as HTMLElement;
     const targetId = targetElement.closest('.react-flow__node')?.getAttribute('data-id');
     const targetNode = nodes.find(node => node.id === targetId);
-  
-    if (targetNode) {
-      console.log(attribute)
-      console.log(targetNode.data.course.code); // Log the course code
-    }
+    setNodes((nodes) => {
+      return nodes.map((node) => {
+        return (node.id == targetNode?.id) ?
+          {
+            ...node,
+            data: {
+              ...node.data,
+              color: color,
+              label: label
+            }
+          } : node
+      })
+    })
   };
   
   const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {

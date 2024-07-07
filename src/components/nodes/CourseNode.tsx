@@ -6,6 +6,8 @@ interface CourseNodeProps {
   data: {
     onChange: () => void
     course: Course
+    color?: String
+    label?: String
   }
 }
 
@@ -13,7 +15,7 @@ const CourseNode = memo(({ data }: CourseNodeProps) => {
   const course = data.course
 
   return (
-    <div className="bg-white p-2 border border-black rounded w-60 hover:bg-slate-50 hover:border-2">
+    <div className={`${data.color ?? 'bg-white'} p-2 border border-black rounded w-60 hover:cursor-move`}>
       <Handle
         type="target"
         position={Position.Top}
