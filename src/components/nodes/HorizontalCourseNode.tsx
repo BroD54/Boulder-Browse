@@ -2,20 +2,20 @@ import { memo } from 'react';
 import { Handle, Position } from 'reactflow';
 import DatabaseNameFormat from '../../features/Flow/utils/DatabaseNameFormat';
 
-interface CourseNodeProps {
+interface HorizontalCourseNodeProps {
   data: {
-    onChange: () => void
-    course: Course
-    color?: String
-    label?: String
-  }
+    onChange: () => void;
+    course: Course;
+    color?: string;
+    label?: string;
+  };
 }
 
-const HorizontalCourseNode = memo(({ data }: CourseNodeProps) => {
-  const course = data.course
+const HorizontalCourseNode = memo(({ data }: HorizontalCourseNodeProps) => {
+  const course = data.course;
 
   return (
-    <div className={`border-black bg-white p-2 border rounded w-60 hover:cursor-move`}>
+    <div className={`border-2 ${data.color ? `border-${data.color}` : 'border-black'} bg-white p-2 rounded w-80 h-28 flex flex-col justify-between hover:cursor-move relative`}>
       <Handle
         type="target"
         position={Position.Left}
@@ -23,21 +23,19 @@ const HorizontalCourseNode = memo(({ data }: CourseNodeProps) => {
         isConnectable={true}
       />
       <div className="flex justify-between items-center">
-        <div className="flex flex-col items-start w-16">
-          <div className="font-bold text-xs">{course.code}</div>
-          <div className="text-xs text-gray-400">
-            <DatabaseNameFormat name={course.database_name} />
-          </div>
-        </div>
-        <div className="ml-2 flex-1 text-center flex items-center">
-          <div className="whitespace-normal break-words text-sm">{course.title}</div>
+        <div className="font-bold text-xs">{course.code}</div>
+        <div className="text-xs text-gray-400">
+          <DatabaseNameFormat name={course.database_name} />
         </div>
       </div>
-      {data.label && data.color != "black" && (
-        <div className={`relative bottom-0 right-0 left-0 bg-${data.color} text-xs text-center rounded`}>
-          {data.label}
+      <div className="text-sm text-center overflow-hidden overflow-ellipsis whitespace-normal line-clamp-3 px-2 mb-2">
+        {course.title}
+      </div>
+      <div className="flex justify-center items-center mt-2">
+        <div className={`relative bg-${data.color} h-4 w-full text-center text-xs rounded mx-1`}>
+          <span className="absolute top-0 left-0 right-0">{data.label && data.color !== "black" && `${data.label}`}</span>
         </div>
-      )}
+      </div>
       <Handle
         type="source"
         position={Position.Right}

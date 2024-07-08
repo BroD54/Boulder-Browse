@@ -46,11 +46,13 @@ const FlowComponent = () => {
   const [isLayoutLocked, setIsLayoutLocked] = useState(false);
 
   useEffect(() => {
-    const savedNodes = localStorage.getItem('nodes');
+    let savedNodes = localStorage.getItem('nodes');
     const savedEdges = localStorage.getItem('edges');
 
     if (savedNodes) {
       setNodes(JSON.parse(savedNodes));
+    } else {
+      savedNodes = "[]"
     }
 
     if (savedEdges) {
@@ -246,15 +248,15 @@ const FlowComponent = () => {
       layoutOptions: { 
         'elk.algorithm': 'layered', 
         'elk.direction': layoutDirection,
-        'elk.spacing.nodeNode': '20', // Space between nodes
-        'elk.spacing.nodeNodeBetweenLayers': '200', // Space between layers
-        'elk.layered.spacing.nodeNode': '20', // Space between nodes in a layer
-        'elk.layered.spacing.nodeNodeBetweenLayers': '200' // Space between layers
+        'elk.spacing.nodeNode': '40', // Space between nodes
+        'elk.spacing.nodeNodeBetweenLayers': '40', // Space between layers
+        'elk.layered.spacing.nodeNode': '40', // Space between nodes in a layer
+        'elk.layered.spacing.nodeNodeBetweenLayers': '40' // Space between layers
       },
       children: nodes.map(node => ({
         id: node.id,
-        width: 240,
-        height: 60
+        width: nodeType == 'CourseNode' ? 160 : 320,
+        height: nodeType == 'CourseNode' ? 160 : 112
       })),
       edges: edges.map(edge => ({
         id: edge.id,
@@ -339,7 +341,7 @@ const FlowComponent = () => {
         onDragOver={handleDragOver}
         nodeTypes={nodeTypes}
         connectionLineStyle={connectionLineStyle}
-        snapToGrid={true}
+        snapToGrid={false}
         snapGrid={snapGrid}
         defaultViewport={defaultViewport}
         attributionPosition="bottom-left"
