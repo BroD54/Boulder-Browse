@@ -23,12 +23,12 @@ const CourseNode = memo(({ data }: CourseNodeProps) => {
         isConnectable={true}
       />
       <div className="flex justify-between items-center">
-        <div className="font-bold text-xs">{course.code}</div>
+        <div className="font-bold text-sm">{course.code}</div>
         <div className="text-xs text-gray-400">
           <DatabaseNameFormat name={course.database_name} />
         </div>
       </div>
-      <div className="text-sm text-center overflow-hidden overflow-ellipsis whitespace-normal line-clamp-4">
+      <div className="text-md text-center overflow-hidden overflow-ellipsis whitespace-normal line-clamp-4">
         {course.title}
       </div>
       <div className="flex justify-center items-center">

@@ -23,15 +23,15 @@ const HorizontalCourseNode = memo(({ data }: HorizontalCourseNodeProps) => {
         isConnectable={true}
       />
       <div className="flex justify-between items-center">
-        <div className="font-bold text-xs">{course.code}</div>
-        <div className="text-xs text-gray-400">
+        <div className="font-bold">{course.code}</div>
+        <div className=" text-gray-400">
           <DatabaseNameFormat name={course.database_name} />
         </div>
       </div>
-      <div className="text-sm text-center overflow-hidden overflow-ellipsis whitespace-normal line-clamp-3 px-2 mb-2">
+      <div className="text-md text-center overflow-hidden overflow-ellipsis whitespace-normal line-clamp-3 px-2 mb-2">
         {course.title}
       </div>
-      <div className="flex justify-center items-center mt-2">
+      <div className="flex justify-center items-center">
         <div className={`relative bg-${data.color} h-4 w-full text-center text-xs rounded mx-1`}>
           <span className="absolute top-0 left-0 right-0">{data.label && data.color !== "black" && `${data.label}`}</span>
         </div>

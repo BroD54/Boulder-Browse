@@ -24,8 +24,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faProjectDiagram, faExchangeAlt, faArrowRight, faTrash, faTh } from '@fortawesome/free-solid-svg-icons'; // Import the layout icon
 
 const connectionLineStyle = { stroke: '#2D2D2D', strokeWidth: '2' };
-const sourceToTargetColor = '#00FFFF'
-const targetToSourceColor = '#32CD32'
+const sourceToTargetColor = '#00FF00'
+const targetToSourceColor = '#0000FF'
 const snapGrid = [20, 20] as [number, number];
 const nodeTypes = {
   courseNode: CourseNode,
@@ -255,8 +255,8 @@ const FlowComponent = () => {
       },
       children: nodes.map(node => ({
         id: node.id,
-        width: nodeType == 'CourseNode' ? 160 : 320,
-        height: nodeType == 'CourseNode' ? 160 : 112
+        width: nodeType == 'courseNode' ? 160 : 320,
+        height: nodeType == 'courseNode' ? 160 : 112
       })),
       edges: edges.map(edge => ({
         id: edge.id,
