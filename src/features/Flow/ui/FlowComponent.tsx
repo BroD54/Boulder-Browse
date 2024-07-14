@@ -268,7 +268,7 @@ const FlowComponent = () => {
     const newGraph = await elk.layout(elkGraph);
 
     const updatedNodes = nodes.map(node => {
-      const nodeLayout = newGraph.children?.find(n => n.id === node.id);
+      const nodeLayout = newGraph.children?.find((n: any) => n.id === node.id);
       return {
         ...node,
         position: { x: nodeLayout?.x, y: nodeLayout?.y }
