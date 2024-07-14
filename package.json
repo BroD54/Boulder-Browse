@@ -13,6 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "elkjs": "^0.9.3",
     "fuse.js": "^7.0.0",
     "gh-pages": "^6.1.1",
     "react": "^18.3.1",
