@@ -248,15 +248,15 @@ const FlowComponent = () => {
       layoutOptions: { 
         'elk.algorithm': 'layered', 
         'elk.direction': layoutDirection,
-        'elk.spacing.nodeNode': '40', // Space between nodes
-        'elk.spacing.nodeNodeBetweenLayers': '40', // Space between layers
-        'elk.layered.spacing.nodeNode': '40', // Space between nodes in a layer
-        'elk.layered.spacing.nodeNodeBetweenLayers': '40' // Space between layers
+        'elk.spacing.nodeNode': '60', // Space between nodes
+        'elk.spacing.nodeNodeBetweenLayers': '60', // Space between layers
+        'elk.layered.spacing.nodeNode': '60', // Space between nodes in a layer
+        'elk.layered.spacing.nodeNodeBetweenLayers': '60' // Space between layers
       },
       children: nodes.map(node => ({
         id: node.id,
-        width: nodeType == 'courseNode' ? 160 : 320,
-        height: nodeType == 'courseNode' ? 160 : 112
+        width: (nodeType == 'courseNode') ? 160 : 320,
+        height: (nodeType == 'courseNode') ? 160 : 112
       })),
       edges: edges.map(edge => ({
         id: edge.id,
@@ -353,7 +353,7 @@ const FlowComponent = () => {
           <ControlButton onClick={() => handleLayout()} title="auto layout" >
             <FontAwesomeIcon icon={faProjectDiagram} />
           </ControlButton>
-          <ControlButton onClick={() => setIsLayoutLocked(true)} title="layout lock" >
+          <ControlButton onClick={() => setIsLayoutLocked(!isLayoutLocked)} title="layout lock" >
             <FontAwesomeIcon icon={faTh} />
           </ControlButton>
           <ControlButton onClick={toggleNodeType} title="flip node direction">

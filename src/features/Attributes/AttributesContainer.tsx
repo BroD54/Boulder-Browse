@@ -19,7 +19,7 @@ const AttributesContainer: React.FC = () => {
     };
 
   return (
-    <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 mb-4 p-4 bg-white rounded-lg shadow-lg z-50 border-2 border-dashed border-gray-300 cursor-auto">
+    <div className="hidden lg:block fixed bottom-0 left-1/2 transform -translate-x-1/2 mb-4 p-4 bg-white rounded-lg shadow-lg z-50 border-2 border-dashed border-gray-300 cursor-auto">
       <div className="flex space-x-4">
         {attributes.map(attr => (
           <DraggableAttribute
