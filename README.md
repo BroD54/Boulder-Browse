@@ -2,6 +2,9 @@
 
 This project is a visual course management tool built using React Flow. It allows users to build and visualize their CU Boulder class plan while connecting pre-requisites.
 
+![Project Demo](https://github.com/BroD54/Boulder-Browse/blob/main/public/demo.PNG)
+
+
 ## Features
 
 - **Interactive Course Nodes**:<br>  Visual representation of courses, displaying course codes, titles, and last semester.
